@@ -6,6 +6,7 @@
 
 .social-links{
     display: flex;
+    margin-bottom: 15px;
 }
 
 .social-links ul{
