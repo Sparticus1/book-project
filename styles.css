@@ -14,7 +14,7 @@
 }  
 
  header{  
-  display: flex;  
+  display: flex !important;  
   justify-content:space-evenly;  
   align-items: center;  
   height:150px;  
@@ -127,7 +127,7 @@
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
-    
+  
 /* Deng's code ends here */
       
     

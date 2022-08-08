@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/ca43e653c4.js" crossorigin="anonymous"></script>
+    <!-- <script src="Books_Database.js"></script> -->
 </head>
 <body>
 
@@ -18,7 +19,7 @@
     <!-- Deng Start Here -->
      <header>
 
-     <div class="logo"><a href="#">DBN Library</a></div>  
+     <div class="logo"><a href="#">DNB Library</a></div>  
      
      <div class="search">  
        <a href=""><input type="text" placeholder="Search Books" id="input">  
@@ -36,10 +37,14 @@
     <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">COLLECTIONS</button>
         <div id="myDropdown" class="dropdown-content">
-          <a href="#">Book 1</a>
-          <a href="#">Book 2</a>
-          <a href="#">Book 3</a>
+          
+          <p onclick="loadBooks('Arts and Entertainment')">Arts and Entertainment </p>
+          <p onclick="loadBooks('Business')">Business </p>
+          <p onclick="loadBooks('Music')">Music</p>
+          <p onclick="loadBooks('Science and Technology')">Science & Tech</p>
+          <p class="goButton"></p>
         </div>
+        
       </div>
    </header>
    
@@ -160,6 +165,6 @@
     
     
     <script src="main.js"></script>
-    
+    <script src="Books_Database.js"></script> 
 </body>
 </html>
