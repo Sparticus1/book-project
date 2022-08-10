@@ -1,3 +1,4 @@
+// Deng code begins from here
 const books_db = [
     {
         "title": "Art for All",
@@ -5,7 +6,7 @@ const books_db = [
         "year": "2018",
         "category": "Arts and Entertainment",
         "publisher": "CAST, Inc.",
-        "image": "Art for All.png"
+        "image": "ArtforAll.png"
     },
     {
         "title": "Learning About Dance",
@@ -13,7 +14,7 @@ const books_db = [
         "year": "2016",
         "category": "Arts and Entertainment",
         "publisher": "Kendall Hunt Pub Co",
-        "image": "Learning About Dance.png"
+        "image": "LearningAboutDance.png"
     },
     {
         "title": "Writing about Music",
@@ -21,7 +22,7 @@ const books_db = [
         "year": "2014",
         "category": "Music",
         "publisher": "University of California Press",
-        "image": "Writing About Music.png"
+        "image": "WritingAboutMusic.png"
     },
     {
         "title": "Science & Technology 7 Student Book",
@@ -29,7 +30,7 @@ const books_db = [
         "year": "2019",
         "category": "Science and Technology",
         "publisher": "Nelson Canada ELHI",
-        "image": "Science Technology.png"
+        "image": "ScienceTechnology.png"
     },
     {
         "title": "The Art of the Screwball Comedy",
@@ -37,7 +38,7 @@ const books_db = [
         "year": "2013",
         "category": "Arts and Entertainment",
         "publisher": "McFarland",
-        "image": "The Art of the Screwball Comedy.png"
+        "image": "TheArtoftheScrewballComedy.png"
     },
 ]
 
@@ -47,6 +48,8 @@ function filterBooksByCategory(category) {
 }
 
 function loadBooks(category){
+    let toRemove = document.getElementById('toRemove');
+    toRemove.remove();
     let books_category = filterBooksByCategory(category);
     // console.log("books_category: " + books_category);
 
@@ -76,12 +79,73 @@ function loadBooks(category){
         div.appendChild(publisher);
         div.appendChild(year);
         books_container.appendChild(div);
-        document.body.appendChild(books_container);
+        document.getElementById("books").appendChild(books_container);
     }  
 }
 
-let category = document.getElementById('category');
-category.innerText = Window.location.href.slide(window.location.href.indexOf("#")+1);
 
-loadBooks(category);
 
+// The render() function takes an array of JSON objects as its parameter. 
+// It then maps over the array to create an HTML list of books and displays 
+// the list in <div id="app"></div>
+
+let render = function(data) {
+    let toRemove = document.getElementById('toRemove');
+    toRemove.remove();
+    let app = document.getElementById('books');
+
+    let booksHTMLString = '<ul>'+
+
+      data.map(function(book){
+        return '<li>'+
+                `<img src=${book.image} height=100 width=100 >`+ '<br/>' +
+                '<strong>Title: </strong>' + book.title + '<br/>' +
+                '<strong>Year: </strong>' + book.year + '<br/>' +
+                '<strong>Author: </strong>' + book.author + '<br/>' +
+                '<strong>Category: </strong>' + book.category + '<br/>' +
+                '<strong>Publisher: </strong>' + book.publisher + '<br/>' +
+                
+
+              '</li>';
+      }).join('');
+      + '</ul>';
+
+    app.innerHTML = booksHTMLString;
+  }
+
+
+  let handleSearch = function(event) {
+    event.preventDefault();
+    console.log(event)
+    // Get the search terms from the input field
+    let searchTerm = document.getElementById("search").value;
+    // Tokenize the search terms and remove empty spaces
+    let tokens = searchTerm
+                  .toLowerCase()
+                  .split(' ')
+                  .filter(function(token){
+                    return token.trim() !== '';
+                  });
+   if(tokens.length) {
+    //  Create a regular expression of all the search terms
+    let searchTermRegex = new RegExp(tokens.join('|'), 'gim');
+    let filteredList = books_db.filter(function(book){
+      // Create a string of all object values
+      let bookString = [];
+      for(let key in book) {
+        if(book.hasOwnProperty(key) && book[key] !== '') {
+          bookString += book[key].toString().toLowerCase().trim() + ' ';
+        }
+      }
+      // Return book objects where a match with the search regular expression if found
+      return bookString.match(searchTermRegex);
+    });
+    console.log(filteredList);
+    // Render the search results
+    render(filteredList);
+   }
+  };
+
+  document.getElementById("search-btn").addEventListener('click', handleSearch);
+  
+// Deng's code ends here

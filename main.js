@@ -1,4 +1,4 @@
-
+// Deng's code begins here
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -22,5 +22,6 @@ window.onclick = function(event) {
 
 let goButton=document.getElementsByClassName('goButton')[0];
 goButton.addEventListener('click',(event)=>{
-  window.location.href=`${window.location.origin}/arts.html#${event.currentTarget.innerHTML}`;
+  window.location.href=`${window.location.origin}${event.currentTarget.innerHTML}`;
 })
+// Deng's code ends here
