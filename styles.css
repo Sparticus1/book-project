@@ -4,6 +4,40 @@
   h1{             
     text-align: center;
   }
+  .image{
+display: inline-flex;
+justify-content: space-evenly;
+margin-left: 50px;
+margin-top: 5px;
+width:200px; ;
+height:300px;
+position: relative;
+margin-bottom: 40px;
+
+
+  }
+ 
+.input-group{
+width:600px;
+padding-right: 25px;
+}
+
+form{ padding-left: 20px;
+    margin-right: 46%;
+    
+    }
+    p{ padding-left: 20px;
+    }
+
+
+    input[type=text] {
+        -webkit-transition: width 0.5s ease-in-out;
+        transition: width 0.5s ease-in-out;
+    }
+    
+    input[type=text]:focus {
+        width: 80%;
+    }
 /* brenda code ends here */
 /* Deng Code starts here */
  
@@ -14,7 +48,7 @@
 }  
 
  header{  
-  display: flex;  
+  display: flex !important;  
   justify-content:space-evenly;  
   align-items: center;  
   height:150px;  
@@ -22,7 +56,7 @@
   background:black;  
 }  
  .heading ul{  
-    display:flex;  
+    display:flex  !important;  
 }  
  .logo a{  
     color:white;  
@@ -76,7 +110,7 @@
     cursor: pointer;  
 }  
  .search a{  
-    display:flex; 
+    display:flex !important; 
     flex-wrap: nowrap;  
 }  
  header a ion-icon{  
@@ -134,6 +168,7 @@
   
 /* Nick code starts here */
 
+
 .inner-footer{
     margin: 0;
     padding: 0;
@@ -141,7 +176,7 @@
 }
 
 .social-links{
-    display: flex;
+    display: flex !important;
     margin-bottom: 15px;
 }
 
@@ -150,7 +185,7 @@
     width: 300px;
     height: 30px;
     margin: auto;
-    padding: 10PX;
+    padding: 10px;
 }
 
 .social-items{
