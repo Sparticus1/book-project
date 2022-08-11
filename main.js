@@ -1,29 +1,4 @@
-// Deng's code begins here
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
-// let goButton = document.getElementsByClassName('goButton')[0];
-// goButton.addEventListener('click', (event) => {
-//   window.location.href = `${window.location.origin}${event.currentTarget.innerHTML}`;
-// })
 
 
 
@@ -44,7 +19,7 @@ function book() {
   // var edition = document.getElementById('edition').value;
   // var isbn = document.getElementById('isbn').value;
   // var description = document.getElementById('description').value;
-  // var key = document.getElementById('key').value;
+  var key = document.getElementById('key').value;
 
 
 
@@ -52,8 +27,9 @@ function book() {
   let author1 = document.getElementById('author').value;
   let year1 = document.getElementById('year').value;
   let category1 = document.getElementById('category').value;
-  let publisher1 = document.getElementById('publisher').value;
+  let publisher1 = null;
   let image1 = document.getElementById('image').value;
+
 
 
   // const book = {
@@ -77,7 +53,7 @@ function book() {
 
   }
 
-  localStorage.setItem("error",book1)
+  // localStorage.setItem("error",book1)
   console.log(book1)
   // bookdb.push(book)
   // console.log(bookdb.length)
@@ -94,8 +70,12 @@ function book() {
 
 //ensures the page is loaded before functions are executed.
 window.onload = function () { 
-  
-  document.getElementById("bookForm").onsubmit = book
+  document.getElementById("bookForm").addEventListener("submit",function(event){
+    event.preventDefault()
+    book()
+  })
+
+  // document.getElementById("bookForm").onsubmit = book
 
 }
 
