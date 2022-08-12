@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Project</title>
-    <link rel="stylesheet" href="./styles.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/ca43e653c4.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Project</title>
+<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/ca43e653c4.js" crossorigin="anonymous"></script>
+<script src="main.js"></script>
 </head>
+
 <body>
 
+  <!-- Deng code ends Here-->
+  <header>
 
+    <div class="logo"><a href="index.html">DBN Library</a></div>
 
+    <div class="search">
+      <a href=""><input type="text" placeholder="Search Books" id="input">
+        <ion-icon class="s" name="search"></ion-icon>
+      </a>
+    </div>
 
-    <!-- Deng Start Here -->
-     <header>
-
-     <div class="logo"><a href="#">DBN Library</a></div>  
-     
-     <div class="search">  
-       <a href=""><input type="text" placeholder="Search Books" id="input">  
-         <ion-icon class="s" name="search"></ion-icon>  
-       </a>  
-     </div>
-
-     <div class="heading">  
-       <ul> 
-         <li><a href="#" class="under">ADD BOOKS</a></li>  
-       </ul>  
-     </div>
+    <div class="heading">
+      <ul>
+        <li><a href="addbook.html" class="under">ADD BOOKS</a></li>
+      </ul>
+    </div>
 
 
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">COLLECTIONS</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#">Book 1</a>
-          <a href="#">Book 2</a>
-          <a href="#">Book 3</a>
-        </div>
-      </div>
-   </header>
-   
-    <!-- Deng code ends Here-->
+      <button onclick="myFunction()" class="dropbtn">COLLECTIONS</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#business" onclick="loadbooksbusiness()">Business</a>
+        <a href="#science" onclick="loadbooksscience()">Science and Technology</a>
+        <a href="#fiction"  onclick="loadbooksfiction()">Fiction</a>
+        <a href="#"onclick="loadbookshealth()">Health and fitness</a>
+        <a href="#"onclick="loadbooksliterature()">Literature</a>
+        <a href="#"onclick="loadbooksbiography()">Biography</a>
 
-<!--------------------------- brenda section  start--------------------------------------------------------------------->
+      </div>
+    </div>
+  </header>
+
+
+  <!--------------------------- brenda section  start--------------------------------------------------------------------->
 
   <!----------------cover image----------------->
 
@@ -86,80 +88,43 @@
   </div>
   <!----------------cover image----------------->
 
-  
-
-
-  <!----------------add book------------------>
-  <div class="jumbotron text-center">
-    <h1>DNB Books</h1>
-
-    <div id="books">
-      <template class="book">
-        <p>Book Title</p>
-        <p>Book Author</p>
-        </template>
-        <hr>
-    </div>
-  </div>
-
-
-  <br>
-  <h1>Add New Book</h1>
-  <div class="container">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col">
-        <form action="submit" id="AddBook">
-          <input class="form-control" type="text" name="title" placeholder="Title of the book..." required="">
-          <br>
-          <input class="form-control" type="text" name="author" placeholder="Author of the book..." required="">
-          <br>
-          <button class="btn btn-danger" type="submit">Add book</button>
-        </form>
-      </div>
-      <div class="col"></div>
-    </div>
-
-  </div>
-
   <!-------------------- brenda section  end ------------------------>
 
 
-    
-    <!-- Nick's code-->
-    <footer class="footer">
-        <div class="inner-footer">
-            <div class="social-links">
-                <ul>
-                    <li class="social-items"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li class="social-items"><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
-                    <li class="social-items"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    
-                </ul>
-            </div>
 
-            <div class="quick-links">
-                <ul>
-                    <li class="quick-items"><a href="#">Home</a></li>
-                    <li class="quick-items"><a href="#">About Us</a></li>
-                    <li class="quick-items"><a href="#">Contact Us</a></li>
-                    <li class="quick-items"><a href="#">Policies</a></li>
-                    <li class="quick-items"><a href="#">Help</a></li>
-                    <li class="quick-items"><a href="#">Feedback</a></li>
-                    <li class="quick-items"><a href="#">Services</a></li>
-                </ul>
-            </div>
-        </div>
+  <!-- Nick's code-->
+  <footer class="footer">
+    <div class="inner-footer">
+      <div class="social-links">
+        <ul>
+          <li class="social-items"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li class="social-items"><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+          <li class="social-items"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
 
-        <div class="outter-footer">
-            LIBRARY NAME <br><br><br> Copyright &copy; B-N-D Web Dev. All Rights Reserved         
-        </div>
-    </footer>
+        </ul>
+      </div>
 
-    <!-- Nick's code-->
-    
-    
-    <script src="main.js"></script>
-    
+      <div class="quick-links">
+        <ul>
+          <li class="quick-items"><a href="#">Home</a></li>
+          <li class="quick-items"><a href="#">About Us</a></li>
+          <li class="quick-items"><a href="#">Contact Us</a></li>
+          <li class="quick-items"><a href="#">Policies</a></li>
+          <li class="quick-items"><a href="#">Help</a></li>
+          <li class="quick-items"><a href="feedback.html">Feedback</a></li>
+          <li class="quick-items"><a href="#">Services</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="outter-footer">
+      DBN LIBRARY <br><br><br> Copyright &copy; D-B-N Web Dev. All Rights Reserved
+    </div>
+  </footer>
+
+  <!-- Nick's code-->
+
+
 </body>
+
 </html>
